@@ -1,8 +1,5 @@
 server:
   port: 8765
-  ssl:
-    enabled: true
-    protocol: TLS
 
 spring:
   application:
@@ -15,11 +12,8 @@ eureka:
       defaultZone: ${URL_EUREKA_SERVER:http://localhost:8761/eureka}
       
 zuul:
-  sslHostnameValidationEnabled: false
   ignored-headers: Access-Control-Allow-Credentials, Access-Control-Allow-Origin
   sensitive-headers: Cookie,Set-Cookie
-  okhttp:
-    enabled: true
   routes:
     contas:
       service-id: caderneta-contas
@@ -45,3 +39,6 @@ hystrix:
 ribbon:
   ConnectTimeout: 10000
   ReadTimeout: 20000
+  
+heroku:
+  enforceHttps: true
