@@ -2,7 +2,7 @@ server:
   port: 8765
   ssl:
     enabled: true
-    key-store: classpath:zuul-keystore.jks
+    key-store: classpath:keystore/zull-keystore.jks
     key-store-password: zuulpass
 
 spring:
