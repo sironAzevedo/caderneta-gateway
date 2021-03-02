@@ -1,5 +1,9 @@
 server:
   port: 8765
+  ssl:
+    enabled: true
+    key-store: classpath:zuul-keystore.jks
+    key-store-password: zuulpass
 
 spring:
   application:
@@ -12,8 +16,11 @@ eureka:
       defaultZone: ${URL_EUREKA_SERVER:http://localhost:8761/eureka}
       
 zuul:
+  sslHostnameValidationEnabled: false
   ignored-headers: Access-Control-Allow-Credentials, Access-Control-Allow-Origin
   sensitive-headers: Cookie,Set-Cookie
+  okhttp:
+    enabled: true
   routes:
     contas:
       service-id: caderneta-contas
