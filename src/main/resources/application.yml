@@ -3,8 +3,6 @@ server:
   ssl:
     enabled: true
     protocol: TLS
-    key-store: classpath:keystore/zull-keystore.jks
-    key-store-password: zuulpass
 
 spring:
   application:
